@@ -12,3 +12,6 @@ print(minus(8, 3))
 a = [[1, 2], [5, 23], [8, 14]]
 a.sort(key=lambda x: x[1])
 print(a)
+
+larger = lambda a, b: a if a > b else b
+print(larger(1, 8))
