@@ -7,5 +7,5 @@ while True:  # Here this is a loop without any condition. This loop will run unt
         element = next(iter_obj)
         print(element)
 
-    except:
+    except StopIteration:
         break
