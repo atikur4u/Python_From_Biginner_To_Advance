@@ -29,7 +29,7 @@ class electric_car(Car):
 
     def __init__(self, make, model, year):
         super().__init__(make, model, year)
-        self.batterysize = 75
+        # self.batterysize = 100
         self.battery = Battery()  # Here we initialize the battery class an attribute...
 
 
@@ -37,13 +37,25 @@ class electric_car(Car):
 
 
 class Battery:
-    def __init__(self, battery_size=75):
+    def __init__(self, battery_size=100):
         self.battery_size = battery_size
+
 
     def describeBattery(self):
         print(f"This car has a {self.battery_size} kwh battery.")
+
+    def get_range(self):
+
+        if self.battery_size == 75:
+            range = 250
+
+        elif self.battery_size ==100:
+            range = 350
+
+        print(f"this car can go {range} miles on full charge..")
 
 
 mytesla = electric_car('Tesla', 'Model S', 2019)
 mytesla.get_descriptive_name()
 mytesla.battery.describeBattery()
+mytesla.battery.get_range()
